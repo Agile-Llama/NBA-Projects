@@ -1,8 +1,8 @@
 import pandas as pd
-from config import dataset_directory, year_directory
+from config import dataset_directory, year_directory, single_year_dataset_directory
 
 # Break up into seperate files based off years. Create a file based off these years. 
-
+# Used for when looking at Eras.
 def seperate_by_years(year, end=None, save=False):
     """
     Function that will take the large dataset and get all the data for a given year. (Of a range of years.)
@@ -20,7 +20,7 @@ def seperate_by_years(year, end=None, save=False):
     # Import all into a pandas dataframe.
     dataframe = pd.read_csv(dataset_directory, low_memory=False)
     
-    if end != 'None':
+    if end != None:
 
         # Check that end is greater than the year.
         if end < year:
@@ -37,7 +37,7 @@ def seperate_by_years(year, end=None, save=False):
 
     # if save = True Then save the file as a csv file in the respective directory.
     if save:
-        if end != 'None':
+        if end != None:
              # Save as range name ie 1979_1990.csv
             dataframe_seperated.to_csv('%s/%s.csv' % (year_directory, str(year)+'_'+str(end)))
         else:
@@ -47,7 +47,25 @@ def seperate_by_years(year, end=None, save=False):
     return dataframe_seperated
 
 
-seperate_by_years(2000, end=2005, save=True)
+def load_data(csv_file = single_year_dataset_directory):
+    """
+    Function which loads a csv file into a pandas dataframe. 
+    Args:
+        csv_file (opt, string) : Optional csv file directory. By default uses the one in config.py.
+    Return:
+        Return a dataframe with the information from a csv file.
+    """
+
+    # Import all into a pandas dataframe.
+    dataframe = pd.read_csv(single_year_dataset_directory, low_memory=False)
+
+    return dataframe
+
+
+# Combine the 3 different datatsets
+
+
+dataframe = load_data()
 
 
 
