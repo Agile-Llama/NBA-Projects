@@ -8,9 +8,10 @@ df_advanced = pd.read_csv("Data/advanced.csv")
 df_extra = pd.read_csv("Data/extra.csv")
 
 # Merge the three datasets together. Also drop the columns which aren't relevant to our goal.
+# Refer 'Pre-processing: Data-cleaning' header in the readme for a full breakdown of what this function does.
 def merge_clean(df_per_36, df_advanced, df_extra):
     df_per_36 = df_per_36.drop(['Age', 'Tm', 'G', 'GS', 'MP'], axis = 1)
-    df_advanced = df_advanced.drop(['Rk', 'Age', 'G', 'MP', 'Pos', 'Tm'], axis = 1)
+    df_advanced = df_advanced.drop(['Rk', 'Age', 'Pos', 'Tm'], axis = 1)
 
     # Remove special characters
     df_per_36['Player'] = df_per_36.Player.str.replace('.','')
@@ -30,10 +31,32 @@ def merge_clean(df_per_36, df_advanced, df_extra):
     # Drop the last few columns.
     final_merge = final_merge.drop(['Team', 'Season', 'Season Type', 'Games'], axis = 1)
 
+    # add new data to df.
+    final_merge = add_features(final_merge)
+
+    # Remove all rows which have a Minutes per game of less then 28.5
+    final_merge = final_merge.drop(final_merge[final_merge.MPG < 28.5].index)
+
+    # Finally, lets fill in the missing values in 3P% with 0.
+    final_merge.fillna({1:0}, inplace=True)
+
     return final_merge
 
 
+# Add two new features to the dataframe.  
+# The first is Assist to turnover ratio. The second is minutes per game. 
+def add_features(df):
+    # Add assist to turnover
+    df['A2TO'] = (df['TOV-per-36'] / df['AST-per-36'])
+
+    # Add Minutes per game.
+    df['MPG'] = (df['MP']/df['G'])
+
+    return df
+    
+
 if __name__ == '__main__':
-    df = merge_clean(df_per_36, df_advanced, df_extra)  
-    df.to_csv('Data/final.csv') 
+    df = merge_clean(df_per_36, df_advanced, df_extra) 
+    print(df.shape) 
+    df.to_csv('final.csv')
 
