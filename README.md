@@ -20,6 +20,8 @@ Im going to using player data from the 2017-18 NBA regular season. The final dat
 
 ***Sub-setting data***. The goal of this project is to make comparisons between players who make significant contributions to games. Therefore i'm going to remove players who do not play a significant amount of minutes per game. By doing this it will reduce clusters from getting to cluttered. I'm going to sub-set the data based on the value which was created previously, minutes per game. If a player has less then 28.5 minutes per game they will be removed from the data-set. By doing this the data-set is reduced to 100 players. After combining the 3 tables, feature-engineering and sub-setting our data, we have a data on 104 players with 50. features:
 
+## Data Analysis
+![ScreenShot](Images/corr_matrix.png)
 
 
 

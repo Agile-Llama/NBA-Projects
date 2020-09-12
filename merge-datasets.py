@@ -37,9 +37,6 @@ def merge_clean(df_per_36, df_advanced, df_extra):
     # Remove all rows which have a Minutes per game of less then 28.5
     final_merge = final_merge.drop(final_merge[final_merge.MPG < 28.5].index)
 
-    # Finally, lets fill in the missing values in 3P% with 0.
-    final_merge.fillna({1:0}, inplace=True)
-
     return final_merge
 
 
