@@ -18,7 +18,68 @@ I'm going to using player data from the 2017-18 NBA regular season. The final da
 
 ***Missing Values***. The only features which have missing values are 3P%, 2P%, FT%, and TS%. After sub-setting our data-set, the only feature which has missing values is 3P%. The value is missing because there are players who have not attempted a single 3 pointer in the whole season. With this being the case, I'm going to replace the value with 0%. It seems reasonable to assume that if a player has not attempted a single 3 pointer, their shooting skills are probably similar to others who have attempted but not made a single 3 pointer throughout the season. After subsetting the data there are only 2 rows that are missing values. Replace these with 0.0 manually. 
 
-***Sub-Setting Data***. The goal of this project is to make comparisons between players who make significant contributions to games. Therefore I'm going to remove players who do not play a significant amount of minutes per game. By doing this it will reduce clusters from getting to cluttered. I'm going to sub-set the data based on the value which was created previously, minutes per game. If a player has less then 28.5 minutes per game they will be removed from the data-set. By doing this the data-set is reduced to 100 players. After combining the 3 tables, feature-engineering, and sub-setting our data, we have data on 104 players with 50 features.
+***Sub-Setting Data***. The goal of this project is to make comparisons between players who make significant contributions to games. Therefore I'm going to remove players who do not play a significant amount of minutes per game. By doing this it will reduce clusters from getting to cluttered. I'm going to sub-set the data based on the value which was created previously, minutes per game. If a player has less then 28.5 minutes per game they will be removed from the data-set. By doing this the data-set is reduced to 100 players. After combining the 3 tables, feature-engineering, and sub-setting our data, we have data on 104 players with the following 51 features:
 
-## Data Analysis
-![ScreenShot](Images/corr_matrix.png)
+1. **Player** - Player name
+2. **Pos** - Position
+3. **FG** - Field Goals Per 36 Minutes
+4. **FGA** - Field Goals Attempted Per 36 Minutes
+5. **FG**% - Field Goal Percentage
+6. **3P** - 3-Pointers Made Per 36 Minutes
+7. **3PA** - 3-Pointers Attempted Per 36 Minutes
+8. **3P%** - 3-Point Percentage
+9. **2P** - 2-Point Field Goals Per 36 Minutes
+10. **2PA** - 2-Point Field Goals Attempted Per 36 Minutes
+11. **2P%** - 2-Point Field Goal Percentage
+12. **FT** - Free-Throws Made Per 36 Minutes
+13. **FTA** - Free Throws Attempted Per 36 Minutes
+14. **FT%** - Free Throw Percentage
+15. **ORB** - Offensive Rebounds Per 36 Minutes
+16. **DRB** - Defensive Rebounds Per 36 Minutes
+17. **TRB** - Total Rebounds Per 36 Minutes
+18. **AST** - Assists Per 36 Minutes
+19. **STL** - Steals Per 36 Minutes
+20. **BLK** - Blocks Per 36 Minutes
+21. **TOV** - Turnovers Per 36 Minutes
+22. **PF** - Personal Fouls Per 36 Minutes
+23. **PTS** - Points Per 36 Minutes
+24. **G** - Games Played
+25. **MP** - Minutes Played In A Season
+26. **PER** - Player Efficiency Rating- A measure of per-minute production standardized such that the league average is 15.
+27. **TS%** - True Shooting Percentage- A measure of shooting efficiency that takes into account 2-point field goals, 3-point field goals, and free throws.
+28. **3PAr** - 3 Point Attempt Rate- Percentage of FG Attempts from 3-Point Range
+29. **FTr** - Free Throw Attempt Rate- Number of FT Attempts Per FG Attempt
+30. **ORB%** - Offensive Rebound Percentage- An estimate of the percentage of available offensive rebounds a player grabbed while he was on the floor.
+31. **DRB%** - Defensive Rebound Percentage- An estimate of the percentage of available defensive rebounds a player grabbed while he was on the floor.
+32. **TRB%** - Total Rebound Percentage- An estimate of the percentage of available rebounds a player grabbed while he was on the floor.
+33. **AST%** - Assist Percentage- An estimate of the percentage of total assists a player had while he was on the floor.
+34. **STL%** - Steal Percentage- An estimate of the percentage of total steals a player had while he was on the floor.
+35. **BLK%** - Block Percentage- An estimate of the percentage of total blocks a player had while he was on the floor.
+36. **TOV%** - Turnover Percentage- An estimate of turnovers committed per 100 plays.
+37. **USG%** - Usage Percentage- An estimate of the percentage of team plays used by a player while he was on the floor.
+38. **OWS** - Offensive Win Shares- An estimate of the number of wins contributed by a player due to his offense.
+39. **DWS** - Defensive Win Shares- An estimate of the number of wins contributed by a player due to his defence.
+40. **WS/48** - Win Shares Per 48 Minutes- An estimate of the number of wins contributed by a player per 48 minutes (league average is approximately .100.
+41. **OBPM** - Offensive Box Plus/Minus- A box score estimate of the offensive points per 100 possessions a player contributed above a league-average player, translated to an average team.
+42. **DBPM** — Defensive Box Plus/Minus- A box score estimate of the defensive points per 100 possessions a player contributed above a league-average player, translated to an average team.
+43. **BPM** — Box Plus/Minus- A box score estimate of the points per 100 possessions a player contributed above a league-average player, translated to an average team.
+44. **VORP** - Value over Replacement Player- A box score estimate of the points per 100 TEAM possessions that a player contributed above a replacement-level (-2.0. player, translated to an average team and prorated to an 82-game season.
+45. **Fast Break Pts** - Fast break points per game
+46. **Points in Paint** - Points Scored in Paint per game
+47. **Points off TO** - Points Scored Off Turnovers per game
+48. **2nd Chance Points** — Any points scored during a possession after an offensive player has already attempted one shot and missed
+49. **Points Scored per Shot** — Calculated by dividing the total points (2P made and 3P made. by the total field goals attempts.
+50. **A2TO** - Assists to turnover ration
+51. **MPG** - Minutes Played per game
+
+## Methods for Data Analysis
+
+Im going to be using three different statistical methods for analysising the data.
+
+1) Principle Component Analysis
+2) K-means Clustering
+3) Hierarchical Clustering
+
+For each method, I am are going to compare the players in terms of Overall impact. In some cases I will also be looking at offensive and defensive impact. This will be done by excluding stats which don't impact the defensive side of the game.
+
+***Overall Impact Calculations*** 
