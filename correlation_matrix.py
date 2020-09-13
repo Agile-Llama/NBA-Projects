@@ -12,7 +12,7 @@ def correlation():
 
     fig, ax = plt.subplots(figsize=(24, 18))
 
-    hm = sns.heatmap(corr, cbar=True, vmin=-0.5, vmax=0.5,
+    hm = sns.heatmap(corr, cbar=True, vmin=-1, vmax=1,
                  fmt='.2f', annot_kws={'size': 3}, annot=True, 
                  square=True, cmap=plt.cm.Blues)
 
@@ -27,5 +27,5 @@ def correlation():
     plt.savefig("corr_matrix", dpi=300)
 
 # Before doing the correlation drop the cols which we dont need.
-df = df.drop(['Player', 'Pos', 'G', 'MP'], axis=1)
+df = df.drop(['Player', 'Pos', 'G', 'MP', 'Index'], axis=1)
 correlation()

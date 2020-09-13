@@ -22,29 +22,29 @@ I'm going to using player data from the 2017-18 NBA regular season. The final da
 
 1. **Player** - Player name
 2. **Pos** - Position
-3. **FG** - Field Goals Per 36 Minutes
-4. **FGA** - Field Goals Attempted Per 36 Minutes
-5. **FG**% - Field Goal Percentage
-6. **3P** - 3-Pointers Made Per 36 Minutes
-7. **3PA** - 3-Pointers Attempted Per 36 Minutes
-8. **3P%** - 3-Point Percentage
-9. **2P** - 2-Point Field Goals Per 36 Minutes
-10. **2PA** - 2-Point Field Goals Attempted Per 36 Minutes
-11. **2P%** - 2-Point Field Goal Percentage
-12. **FT** - Free-Throws Made Per 36 Minutes
-13. **FTA** - Free Throws Attempted Per 36 Minutes
-14. **FT%** - Free Throw Percentage
-15. **ORB** - Offensive Rebounds Per 36 Minutes
-16. **DRB** - Defensive Rebounds Per 36 Minutes
-17. **TRB** - Total Rebounds Per 36 Minutes
-18. **AST** - Assists Per 36 Minutes
-19. **STL** - Steals Per 36 Minutes
-20. **BLK** - Blocks Per 36 Minutes
-21. **TOV** - Turnovers Per 36 Minutes
-22. **PF** - Personal Fouls Per 36 Minutes
-23. **PTS** - Points Per 36 Minutes
-24. **G** - Games Played
-25. **MP** - Minutes Played In A Season
+3. **G** - Games Played
+4. **MP** - Minutes Played In A Season
+5. **FG** - Field Goals Per 36 Minutes
+6. **FGA** - Field Goals Attempted Per 36 Minutes
+7. **FG**% - Field Goal Percentage
+8. **3P** - 3-Pointers Made Per 36 Minutes
+9. **3PA** - 3-Pointers Attempted Per 36 Minutes
+10. **3P%** - 3-Point Percentage
+11. **2P** - 2-Point Field Goals Per 36 Minutes
+12. **2PA** - 2-Point Field Goals Attempted Per 36 Minutes
+13. **2P%** - 2-Point Field Goal Percentage
+14. **FT** - Free-Throws Made Per 36 Minutes
+15. **FTA** - Free Throws Attempted Per 36 Minutes
+16. **FT%** - Free Throw Percentage
+17. **ORB** - Offensive Rebounds Per 36 Minutes
+18. **DRB** - Defensive Rebounds Per 36 Minutes
+19. **TRB** - Total Rebounds Per 36 Minutes
+20. **AST** - Assists Per 36 Minutes
+21. **STL** - Steals Per 36 Minutes
+22. **BLK** - Blocks Per 36 Minutes
+23. **TOV** - Turnovers Per 36 Minutes
+24. **PF** - Personal Fouls Per 36 Minutes
+25. **PTS** - Points Per 36 Minutes
 26. **PER** - Player Efficiency Rating- A measure of per-minute production standardized such that the league average is 15.
 27. **TS%** - True Shooting Percentage- A measure of shooting efficiency that takes into account 2-point field goals, 3-point field goals, and free throws.
 28. **3PAr** - 3 Point Attempt Rate- Percentage of FG Attempts from 3-Point Range
@@ -83,3 +83,9 @@ Im going to be using three different statistical methods for analysising the dat
 For each method, I am are going to compare the players in terms of Overall impact. In some cases I will also be looking at offensive and defensive impact. This will be done by excluding stats which don't impact the defensive side of the game.
 
 ***Overall Impact Calculations*** 
+
+For *Overall Impact* calculations, we will be looking at features 5:51. I'll be ignoring features like total season minutes and games played because we don't want to seperate players who may have missed games due to injuries. There will be no catagorical variables but these will be used when looking at the results. For *Offensive Impact* calculations, I am going to be looking at the following features: 5:16, 19, 22, 50, 25:28, 31, 33:35, 43:47, 49. In regards to *Defensive Impact* calculations im going to be looking at the features: 17, 20, 21, 36, 29, 32, 33, 37, 40.
+
+Before applying any statistical methods it seems wise to have a look at a correlation plot between the features to see if there is anything interesting. The below image is that correlation matrix with the highest DPI I can manage. Pretty much everything is as we expect to see. For example Second Chance Points positively correlate with Offensive Rebound %, and 3-pointer Attempt Rate negatively correlates with Points Score in the Paint. Nothing in this is super interesting but it is an easy way to visualize all the data. 
+
+![ScreenShot](Images/corr_matrix.png)

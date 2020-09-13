@@ -54,4 +54,5 @@ def add_features(df):
 
 if __name__ == '__main__':
     df = merge_clean(df_per_36, df_advanced, df_extra) 
+    df.to_csv('final.csv', index=False)
 
