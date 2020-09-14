@@ -89,3 +89,17 @@ For *Overall Impact* calculations, we will be looking at features 5:51. I'll be 
 Before applying any statistical methods it seems wise to have a look at a correlation plot between the features to see if there is anything interesting. The below image is that correlation matrix with the highest DPI I can manage. Pretty much everything is as we expect to see. For example Second Chance Points positively correlate with Offensive Rebound %, and 3-pointer Attempt Rate negatively correlates with Points Score in the Paint. Nothing in this is super interesting but it is an easy way to visualize all the data. 
 
 ![ScreenShot](Images/corr_matrix.png)
+
+## Method 1: Principal Component Analysis (PCA)
+
+The Wikipedia article summarizes Principal Component Analysis as:
+“A statistical procedure that uses an orthogonal transformation to convert a set of observations of possibly correlated variables (entities each of which takes on various numerical values) into a set of values of linearly uncorrelated variables called principal components. If there are n observations with p variables, then the number of distinct principal components is minimum (n-1,p). This transformation is defined in such a way that the first principal component (PC1) has the largest possible variance (that is, accounts for as much of the variability in the data as possible), and each succeeding component in turn has the highest variance possible under the constraint that it is orthogonal to the preceding components. The resulting vectors (each being a linear combination of the variables and containing n observations) are an uncorrelated orthogonal basis set.”
+
+Principal Component Analysis is a mathematical technique used for dimensionality reduction. Its goal is to reduce the number of features whilst keeping most of the original information. The reason I'm using PCA is that it makes visualization if a large number of features possible. Imagine you have a data-set of 10 features and want to visualize it. How? 10 features = 10 physical dimensions. Humans kind of suck when it comes to visualizing anything above 3 dimensions - hence the need for dimensionality reduction techniques. 
+To explain PCA in a simple way. The goal is to get 2 main principal components from our data-set. What this means is we take all the features which that we are studying, combining them, and extracting 2 NEW features that represent a combination of the previous features. These new principal components are the best possible combination of 2 features for numerically conveying differences between players. I will also be doing a PCA on the Offensive/Defensive impact of the players in our data-set. The first up is the Overall Player Impact. 
+
+![ScreenShot](Images/Overall-Player-Impact-PCA.png)
+
+
+
+
