@@ -10,11 +10,12 @@ import numpy as np
 from adjustText import adjust_text
 
 df = pd.read_csv(config.final_dataset)
+text = []
 
-y = df['Pos']
-
-x = df
-x = x.drop(['Pos','Player', 'G', 'MP', 'Index'], axis=1)
+# Which of the three to run.
+overall_impact = False
+offensive_impact = False
+defensive_impact = True
 
 def clean_dataset(df):
     assert isinstance(df, pd.DataFrame), "df needs to be a pd.DataFrame"
@@ -22,32 +23,35 @@ def clean_dataset(df):
     indices_to_keep = ~df.isin([np.nan, np.inf, -np.inf]).any(1)
     return df[indices_to_keep].astype(np.float64)
 
-x = clean_dataset(x)
 
-x = StandardScaler().fit_transform(x)
+def player_impact(x, y, title):
+    pca = PCA(n_components=2)
+    principal_components = pca.fit_transform(x)
+    principal_df = pd.DataFrame(data = principal_components , columns = ['principal component 1', 'principal component 2'])
 
-pca = PCA(n_components=2)
-principal_components = pca.fit_transform(x)
-principal_df = pd.DataFrame(data = principal_components , columns = ['principal component 1', 'principal component 2'])
+    final_df = pd.concat([principal_df, df[['Pos']]], axis = 1)
 
-final_df = pd.concat([principal_df, df[['Pos']]], axis = 1)
+    fig = plt.figure(figsize = (8,8))
+    ax = fig.add_subplot(1,1,1) 
+    ax.set_xlabel('Principal Component 1', fontsize = 15)
+    ax.set_ylabel('Principal Component 2', fontsize = 15)
+    ax.set_title('2 component PCA', fontsize = 20)
+    targets = ['C', 'PF', 'PG', 'SF', 'SG']
+    colors = ['r', 'g', 'b', 'c', 'm']
 
-fig = plt.figure(figsize = (8,8))
-ax = fig.add_subplot(1,1,1) 
-ax.set_xlabel('Principal Component 1', fontsize = 15)
-ax.set_ylabel('Principal Component 2', fontsize = 15)
-ax.set_title('2 component PCA', fontsize = 20)
-targets = ['C', 'PF', 'PG', 'SF', 'SG']
-colors = ['r', 'g', 'b', 'c', 'm']
-
-text = []
-
-for target, color in zip(targets, colors):
-    indices_to_keep = final_df['Pos'] == target
-    ax.scatter(final_df.loc[indices_to_keep, 'principal component 1'], final_df.loc[indices_to_keep, 'principal component 2'], c = color, s = 50, cmap=plt.cm.Blues)
+    for target, color in zip(targets, colors):
+        indices_to_keep = final_df['Pos'] == target
+        ax.scatter(final_df.loc[indices_to_keep, 'principal component 1'], final_df.loc[indices_to_keep, 'principal component 2'], c = color, s = 50, cmap=plt.cm.Blues)
     
-ax.legend(targets)
-ax.grid()
+    ax.legend(targets)
+    ax.grid()
+
+    label_point(final_df['principal component 1'], final_df['principal component 2'], df['Player'], ax)
+
+    # Add the labels to the plots. Using a library which reduces overlapping.
+    plt.title('(%s Interations) %s' % (adjust_text(text, arrowprops=dict(arrowstyle="-", color='k', lw=0.5), save_steps=False), title))
+
+    plt.show()
 
 # Function which annotates each point on the PCA plot with the players name. Currently just adds all to a list. 
 # This list is used to add labels later without overlapping labels.
@@ -58,9 +62,28 @@ def label_point(x, y, val, ax):
         text.append(plt.text(point['x'], point['y']+0.1, str(point['val']), size=9))
 
 
-label_point(final_df['principal component 1'], final_df['principal component 2'], df['Player'], ax)
 
-# Add the labels to the plots. Using a library which reduces overlapping.
-plt.title('(%s Interations) Overall Player Impact' % adjust_text(text, arrowprops=dict(arrowstyle="-", color='k', lw=0.5), save_steps=False))
+if __name__ == '__main__':
+    y = df['Pos']
 
-plt.show()
+    if overall_impact:
+        x = df
+        x = x.drop(['Pos','Player', 'G', 'MP', 'Index', ], axis=1)
+        x = clean_dataset(x)
+        x = StandardScaler().fit_transform(x)
+        player_impact(x, y, 'Overall Player Impact')
+
+    elif offensive_impact:
+        x = df[['FG', 'G', 'MP', 'FG', 'FGA', 'FG%', '3P', '3PA', '3P%', '2P', '2PA', '2P%', 'FT', 'FTA', 'FT%',
+        'TRB', 'BLK', 'A2TO', 'PTS', 'PER', 'TS%', '3PAr', 'DRB%', 'AST%', 'STL%', 'BLK%', 'BPM', 'VORP', 
+        'Fast Break Pts', 'Points In Paint', 'Points off TO', 'Points scored per shot']]
+
+        x = clean_dataset(x)
+        x = StandardScaler().fit_transform(x)
+        player_impact(x, y, 'Offensive Impact')
+
+    elif defensive_impact:
+        x = df[['ORB', 'AST', 'STL', 'FTr', 'TOV%', 'TRB%', 'AST%', 'USG%', 'WS/48']]
+        x = clean_dataset(x)
+        x = StandardScaler().fit_transform(x)
+        player_impact(x, y, 'Defensive Impact')
