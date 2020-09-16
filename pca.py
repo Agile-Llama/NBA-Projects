@@ -59,7 +59,7 @@ def label_point(x, y, val, ax):
     a = pd.concat({'x': x, 'y': y, 'val': val}, axis=1)
     for i, point in a.iterrows():
         #ax.text(point['x'], point['y']+0.1, str(point['val']))
-        text.append(plt.text(point['x'], point['y']+0.1, str(point['val']), size=9))
+        text.append(plt.text(point['x'], point['y'], str(point['val']), size=9))
 
 
 
