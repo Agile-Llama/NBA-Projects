@@ -106,4 +106,7 @@ Note; that players are color-coded by their traditional position. The issue with
 
 ![ScreenShot](Images/Offensive-Impact-PCA.png)
 
+For the most part the offensive PCA is very similiar to the overall player impact PCA. This is expected as the majority of the statistic in the dataset are made up of offensive stats. However, there are still some notable changes that should be highlighted. 
 
+
+### Add Defensive Impact Next...
