@@ -111,5 +111,7 @@ For example we can clearly see that Nikola Jokic and Marc Gasol, two of the best
 
 ![ScreenShot](Images/Defensive-Impact-PCA.png)
 
+The first thing we notice when looking at the defensive impact is the cluster of centres at the top of the graph. Dwight Howard, De Andre Jordan and Andre Drummond are the three highest. These players are also the top rebounders of the 17-18 NBA season. What this tells us is that rebounding has a large impact on the y axis of the defensive impact PCA. If we continue to look at the centres which are clustered toegether we can see that Steven Adams, who has been clustered tightly in our two previous PCA graphs, is now pushed slightly furthur out. The reason for this is the Oklahoma City Thunders defensive strategy of giving the defensive rebounds which he would normally secure to Russell Westbrook. The idea is that if Russell gets them this will lead to a fast-break scoring oppitunity that wouldn't be possible if the centre had recieved the rebound and then passed it to the point guard. 
+
 
 
