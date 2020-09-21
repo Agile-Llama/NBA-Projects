@@ -107,6 +107,9 @@ Note; that players are color-coded by their traditional position. The issue with
 ![ScreenShot](Images/Offensive-Impact-PCA.png)
 
 For the most part the offensive PCA is very similiar to the overall player impact PCA. This is expected as the majority of the statistic in the dataset are made up of offensive stats. However, there are still some notable changes that should be highlighted. 
+For example we can clearly see that Nikola Jokic and Marc Gasol, two of the best play-making centers in the NBA today, find themselves closer to the point guards than to other centres. Ben Simmons, who is listed as a point guard finds himself surrounded by post players. Finally lets have a look at the PCA for the defensive statistics. 
+
+![ScreenShot](Images/Defensive-Impact-PCA.png)
 
 
-### Add Defensive Impact Next...
+
