@@ -1,4 +1,6 @@
-# NBA-Player-Similarity
+# NBA-Player-Similarity Part 1. Mordern Era.
+
+This report is broken up into two parts. The first part will be focused on looking at modern players. Specifically players from the 2017-18 NBA regular season. I will be exploring the similarities between players through a range of machine learning techniques and visualizing this data. The second part is going to be focused on comparing modern players to players from previous errors. Think Larry Birds Celtics, Magic Johnsons Las Angeles Lakers, and Michael Jordans Chicago Bulls. The first half of the report will be more detailed on the methods used and explaining how and why the work. Whereas the second part will be more focused on drawing different conclusions based on the data which is discovered. 
 
 ## The Problem
 
@@ -127,3 +129,20 @@ I think this is the best way of visualizing the similarities we have looked at s
 2. The last 5 MVP's (Harden, Curry, Durant, Lebron, Westbrook) are all in a small cluster in the bottom. This cluster also consists of Giannis Antetokounmpo, Anthony David, and Damian Lillard. Showing that these 3 other players are on the same level as a regular-season MVP. Perhaps this suggests that there is a pattern which 'needs; to be followed to be a modern day MVP.
 3. Antetokounmpo and Anthony Davis, the two young players considered by NBA General Managers to have the highest potential, are most similar to each other.
 
+## Method 3: K-means Clustering.
+
+Work In Progress...
+
+# NBA-Player-Similarity Part 2. Previous Eras. 
+
+So far we have looked at players who have played in the 2017-18 NBA season. Looked at their stats are compared these players to each other. Now for something more interesting. I'm going to be looking at players from previous errors and seeing the comparisons. Now there are some issues with this. Nowadays NBA statistics are far more advanced, we have significantly more data available which is both more complete but is also deeper in nature. What this means is that we are going to be excluding many of the stats which we used in part 1 and only use stats that were collected in previous eras. The other problem which should be noted is that basketball changes drastically between eras. The modern NBA is much more focused on the three-point shot whereas players from the 90s, 80s, and 70s were far less concerned about it. Regardless, I think this can be an interesting experiment to do and see if we can find any interesting comparisons.
+
+## Defining an Era.  
+
+Theres a few ways in which eras are definded in the NBA. There's by decade, by major rule change (think hand-checking of the late 90s), and by dominant teams/players of the time. For this project i'll be seperating eras based of dominant teams/players.
+- 1979-1989 Larry Bird and Magic Johnson Era. 
+- 1989-1999 Michael Jordan Era.
+- 1999-2009 Kobe, Shaq and Duncan Era.
+- 2009-2016 Lebron James and Golden State Warriors Era. 
+
+These eras are by no means set, they are almost entriely subjective. But they do consist of whom most would consider the most dominant player(s)/team(s) of the time. 
