@@ -77,8 +77,8 @@ I'm going to using player data from the 2017-18 NBA regular season. The final da
 Im going to be using three different statistical methods for analysising the data.
 
 1) Principle Component Analysis
-2) K-means Clustering
-3) Hierarchical Clustering
+2) Hierarchical Clustering
+3) K-means Clustering
 
 For each method, I am are going to compare the players in terms of Overall impact. In some cases I will also be looking at offensive and defensive impact. This will be done by excluding stats which don't impact the defensive side of the game.
 
@@ -106,12 +106,24 @@ Note; that players are color-coded by their traditional position. The issue with
 
 ![ScreenShot](Images/Offensive-Impact-PCA.png)
 
-For the most part the offensive PCA is very similiar to the overall player impact PCA. This is expected as the majority of the statistic in the dataset are made up of offensive stats. However, there are still some notable changes that should be highlighted. 
-For example we can clearly see that Nikola Jokic and Marc Gasol, two of the best play-making centers in the NBA today, find themselves closer to the point guards than to other centres. Ben Simmons, who is listed as a point guard finds himself surrounded by post players. Finally lets have a look at the PCA for the defensive statistics. 
+For the most part, the offensive PCA is very similar to the overall player impact PCA. This is expected as the majority of the statistic in the dataset are made up of offensive stats. However, there are still some notable changes that should be highlighted. 
+For example, we can clearly see that Nikola Jokic and Marc Gasol, two of the best play-making centers in the NBA today, find themselves closer to the point guards than to other centers. Ben Simmons, who is listed as a point guard finds himself surrounded by post players. Finally, let's have a look at the PCA for the defensive statistics. 
 
 ![ScreenShot](Images/Defensive-Impact-PCA.png)
 
-The first thing we notice when looking at the defensive impact is the cluster of centres at the top of the graph. Dwight Howard, De Andre Jordan and Andre Drummond are the three highest. These players are also the top rebounders of the 17-18 NBA season. What this tells us is that rebounding has a large impact on the y axis of the defensive impact PCA. If we continue to look at the centres which are clustered toegether we can see that Steven Adams, who has been clustered tightly in our two previous PCA graphs, is now pushed slightly furthur out. The reason for this is the Oklahoma City Thunders defensive strategy of giving the defensive rebounds which he would normally secure to Russell Westbrook. The idea is that if Russell gets them this will lead to a fast-break scoring oppitunity that wouldn't be possible if the centre had recieved the rebound and then passed it to the point guard. 
+The first thing we notice when looking at the defensive impact is the cluster of centers at the top of the graph. Dwight Howard, De Andre Jordan, and Andre Drummond are the three highest. These players are also the top rebounders of the 17-18 NBA season. What this tells us is that rebounding has a large impact on the y-axis of the defensive impact PCA. If we continue to look at the centers which are clustered together we can see that Steven Adams, who has been clustered tightly in our two previous PCA graphs, is now pushed slightly further out. The reason for this is the Oklahoma City Thunders defensive strategy of giving the defensive rebounds, which he would normally secure, to Russell Westbrook. The idea is that if Russell gets them this will lead to a fast-break scoring opportunity that wouldn't be possible if the center had received the rebound and then passed it to the point guard. 
 
+## Method 2: Hierarchical Clustering
 
+The next method is Hierarchical Clustering. We are going to perform Bottom-up/Agglomerative Clustering instead of Divisive/Top-down Hierarchical Clustering. The former is better at identifying small clusters while the latter is better is identifying large clusters. Once again we will be using the PCA method to reduce the data dimensons to something that we are able to actually plot. 
+
+![Screenshot](Images/h-clustering/Dendo-ward-overall-impact.png)
+
+I think this is the best way of visualizing the similarities we have looked at so far. The PCA scatterplot from before was kind of messy with all the different names. With the dendrogram it allows us to pick a player and see quickly who they are similar to. When I first looked at the dendrogram I saw some connections which I had never thought about before but when presented with it quickly made sense to why these players might be grouped. 
+
+### Interesting observations:
+
+1. Lou Williams who plays as the 6th man on the Clippers is clustered by some quality shooters. (Kyrie Irving, Jimmy Butler, Kemba Walker, Devin Booker) which considering that he is in his early 30s is a decent effort. 
+2. The last 5 MVP's (Harden, Curry, Durant, Lebron, Westbrook) are all in a small cluster in the bottom. This cluster also consists of Giannis Antetokounmpo, Anthony David, and Damian Lillard. Showing that these 3 other players are on the same level as a regular-season MVP. Perhaps this suggests that there is a pattern which 'needs; to be followed to be a modern day MVP.
+3. Antetokounmpo and Anthony Davis, the two young players considered by NBA General Managers to have the highest potential, are most similar to each other.
 
