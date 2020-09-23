@@ -146,3 +146,49 @@ Theres a few ways in which eras are definded in the NBA. There's by decade, by m
 - 2009-2016 Lebron James and Golden State Warriors Era. 
 
 These eras are by no means set, they are almost entriely subjective. But they do consist of whom most would consider the most dominant player(s)/team(s) of the time. 
+
+## Pre-processing: Data-cleaning
+
+For the most part, the data cleaning will be similar to part 1. I'm going to cover anything which is either interesting or important to note. For example, I will be sub-setting the data in the same way and standardizing the data the same way as in part 1 but won't be covering this any further.
+
+***Removing Features***. Access to statistics in the NBA in the past 10 years has exploded. There are all types of advanced stats that weren't available in the previous eras of the NBA, because of this, I'll be using stats that are only available in all the eras. The data I'm using is scraped from basketball reference. 
+
+1. **Player** - Player name
+2. **Pos** - Position
+3. **G** - Total games played
+4. **GS** - Total games started
+5. **MP** - Minutes Played in a Season
+6. **FG** - Field Goals Per 36 Minutes
+7. **FGA** - Field Goals Attempted Per 36 Minutes
+8. **3P** - 3-Pointers Made Per 36 Minutes
+9. **3PA** - 3-Pointers Attempted Per 36 Minutes
+10. **FT** - Free-Throws Made Per 36 Minutes
+11. **FTA** - Free-Throws Attempted Per 36 Minutes
+12. **ORB** - Offensive Rebounds Per 36 Minutes
+13. **DRB** - Defensive Rebounds Per 36 Minutes
+14. **AST** - Assists Per 36 Minutes
+15. **STL** - Steals Per 36 Minutes
+16. **BLK** - Blocks Per 36 Minutes
+17. **TOV** - Turnovers Per 36 Minutes
+18. **PF** - Personal Fouls Per 36 Minutes
+19. **PTS** - Points Scored Per 36 Minutes
+20. **PER** - A measure of per-minute production standardized such that the league average is 15.
+21. **TS%** - A measure of shooting efficiency. Takes into account 2-point field goals, three point field goals, and free throws. 
+22. **3PAr** -  3 Point Attempt Rate- Percentage of FG Attempts from 3-Point Range
+23. **FTr** - Free Throw Attempt Rate- Number of FT Attempts Per FG Attempt
+24. **ORB%** - Offensive Rebound Percentage- An estimate of the percentage of available offensive rebounds a player grabbed while he was on the floor.
+25. **DRB%** - Defensive Rebound Percentage- An estimate of the percentage of available defensive rebounds a player grabbed while he was on the floor.
+26. **TRB%** - Total Rebound Percentage- An estimate of the percentage of available rebounds a player grabbed while he was on the floor.
+27. **AST%** - Assist Percentage- An estimate of the percentage of total assists a player had while he was on the floor.
+28. **STL%** - Steal Percentage- An estimate of the percentage of total steals a player had while he was on the floor.
+29. **BLK%** - Block Percentage- An estimate of the percentage of total blocks a player had while he was on the floor.
+30. **TOV%** - Turnover Percentage- An estimate of turnovers committed per 100 plays.
+31. **USG%** - Usage Percentage- An estimate of the percentage of team plays used by a player while he was on the floor.
+32. **OWS** - Offensive Win Shares- An estimate of the number of wins contributed by a player due to his offense.
+33. **DWS** - Defensive Win Shares- An estimate of the number of wins contributed by a player due to his defence.
+34. **WS** - Win shares.
+35. **WS/48** - Win Shares Per 48 Minutes- An estimate of the number of wins contributed by a player per 48 minutes (league average is approximately .100.
+36. **OBPM** - Offensive Box Plus/Minus- A box score estimate of the offensive points per 100 possessions a player contributed above a league-average player, translated to an average team.
+37. **DBPM** - Defensive Box Plus/Minus- A box score estimate of the defensive points per 100 possessions a player contributed above a league-average player, translated to an average team.
+38. **BPM** - Box Plus/Minus- A box score estimate of the points per 100 possessions a player contributed above a league-average player, translated to an average team.
+39. **MPG** - Minutes Played per game
