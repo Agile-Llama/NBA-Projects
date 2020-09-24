@@ -192,3 +192,45 @@ For the most part, the data cleaning will be similar to part 1. I'm going to cov
 37. **DBPM** - Defensive Box Plus/Minus- A box score estimate of the defensive points per 100 possessions a player contributed above a league-average player, translated to an average team.
 38. **BPM** - Box Plus/Minus- A box score estimate of the points per 100 possessions a player contributed above a league-average player, translated to an average team.
 39. **MPG** - Minutes Played per game
+
+
+## Methods for Data Analysis
+
+Once again we are going to be looking at the same three method for analysing the data.
+
+1) Principle Component Analysis
+2) Hierarchical Clustering
+3) K-means Clustering
+
+For each method, I am are going to compare the players in terms of Overall impact. In some cases I will also be looking at offensive and defensive impact. This will be done by excluding stats which don't impact the defensive side of the game. Im going to be looking at specific years in each era at first, look to see who was similiar to their contemporaries. Then later I will add players from the modern eras to see how they all compare.
+
+## Method 1: Principal Component Analysis (PCA)
+
+### **1984-1985 Season:**  
+First, let's look at some significant years in NBA history. I'm going to start with 1984-1985, the reason for choosing this year is that it is a year where one of the best teams of all-time played. The 1985 Boston Celtics had one of the greatest lineups ever assembled. Consisting of players such as Kevin McHale, Robert Parish, Bill Walton, and Larry Bird (Note; Not prime Bill Walton). These 5 players are all notable as they are all in the Basketball Hall of Fame. This was also the debut season of a little known player called Michael Jordan. With these two reasons, I figure its a good place to start.
+
+![Screenshot](Part-2-Images/1985-PCA-Overall-Impact.png)
+
+Without any knowledge, 80/90s basketball looking at the graph above might not seem all that interesting. But if you know anything about the great players of the 80s there are some interesting points I want to look at in further detail. 
+The two best players in 1984-1985 were Magic Johnson and Larry Bird. So players which are close by are more than likely highly skilled basketball players. There is a small cluster of 3 players in the bottom middle. Larry Bird (1983-84 MVP), Bernard Kind (1983-84 MVP Runner up), and Michael Jordan in his debut season. These three players are all grouped quite close together which makes sense, as these are some of the top players in the NBA. The other thing which should be noted is that generally, players are clustered with their respective positions. Pre-2010's, basketball was much more position focused so players that are removed from their respective clusters should be noted. 
+
+**Point Guard** Let's have a look at the Point Guard position first. Magic Johnson, Isiah Thomas, and Sidney Moncrief are all outliers of the point guard cluster. Two of these (Magic Johnson and Isiah Thomas) are to be expected but the inclusion of Sidney Moncrief is interesting. Magic Johnson and Isiah Thomas are regarded as two of the great point guards of all time. The inclusion of Moncrief makes sense buts he's not someone you necessarily think when considering the best point guards of all time.
+
+**Shooting Forward** Larry Bird the reigning MVP is in a small cluster with one other player, Bernard King. Bernard King came second to Bird in the 1983-84 MVP voting. These two players are joined by one other player who isn't a Shooting Forward, his name is Michael Jordan. Out of all the clusters in this PCA, this is potentially the 3 most skilled players on the 1984-85 season. 
+
+**Centers** There are a couple of interesting clusters of centers. Hakeem Olajuwon and Artis Gilmore are in a small cluster together. Both are extremely skilled big men who have excellent footwork. Kareem Abdul Jabbar finds himself away from all the other centers. Instead, he finds himself surrounded by players who play the Power Forward position. Perhaps this suggesting his playstyle would be suited to the PF position. I think there is an argument that Kareem would play as a power forward in the modern NBA. The last thing to note is Mark Eaton is alone at the top. He's clearly having a career year here, further evidenced by the fact that he won the NBA Defensive Player of the year award in the 1984-85 season.
+
+### **1995-1996 Season:** 
+The 1995-96 season is perhaps, one of, the most famous NBA seasons of all time. The reason for people remembering this season above almost all else is for the 96 Bulls. The 96 Bulls are up there will the greatest teams of all time. Consisting of Michael Jordan in his prime, Scottie Pippen, and Dennis Rodman. Featuring great role players like Steve Kerr and Ron Harper. The other reason for choosing this season next is many of the superstars from the 1984-85 season have left the league. The league is no longer ruled by Bird and Magic, instead, the torch has been firmly handed over to Michael Jordan and his 90s Bulls Teams.
+
+![Screenshot](Part-2-Images/1996-PCA-Overall-Impact.png)
+
+We have two clear outliers in this graph. **David Robinson** and **Michael Jordan**. Jordan returned to the NBA during the 1994-95 NBA season. He willed his team to a playoff place but wasn't able to get past the Orlando Magic featuring a young Shaq, losing 4-2 and being knocked out of the playoffs. He made his full return in the 1995-96 season and became the MVP of the league. David Robinson who is an outlier more on the defensive end came in second place in the MVP voting. What's most impressive about Michael Jordan's position is that normally we see players who excel on one side of the court, however, Jordan is excelling both defensively and offensively. The graph suggests that positive Y shares a positive correlation with strong defensive players and negative X a strong correlation with offensive players. 
+
+**Charles Barkley** better known as Chuck breaks out from the cluster forming in the middle, something that we didn't see in the 1985 PCA featured before. Chuck is without a doubt a top 50 player of all time. However with players like this, we normally see them show signs early on, the PCA before didn't suggest that he would be such a great player. The circumstances in which Chuck was drafted are probably the reason as to why he didn't thrive early in his career. He was drafted by the Philidelphia 76ers being selected as the 5th pick in the first round. He was drafted into a team which featured Legends like Maurice Cheeks, Moses Malone, and Dr. J (Julius Erving). This was a great place for a young rookie to start but limited his minutes. His position in this graph is more in line with an all-time great player like Sir Charles undoubtedly is.
+
+**Shaq** and **Alonso Mourning** and grouped very closely together. This is Orlando Magic Shaq. For someone who doesn't know a lot about pre-lakers Shaq, this is 'skinny' Shaq. To suggest that The Diesel was ever skinny is foolish but relative to Lakers Shaq this version is. Alonzo Mourning was playing for the Charlotte Hornets at this point and was a fantastic defensive and Offensive player. This graph suggests that both Shaq and Mourning are very similar.
+
+![Screenshot](Part-2-Images/2004-PCA-Overall-Impact.png)
+
+

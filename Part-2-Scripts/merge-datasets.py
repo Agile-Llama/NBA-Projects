@@ -2,7 +2,8 @@ import pandas as pd
 import config
 import os
 
-year_to_load = '1985'
+# Note if the year is 1985 that means its the 1984-85 season.
+year_to_load = '2004'
 
 df_standard = pd.read_csv(config.folder_for_years+"/%s_player_s_totals.csv" % (str(year_to_load)))
 df_advanced = pd.read_csv(config.folder_for_years+"/%s_adv_player_s_totals.csv" % (str(year_to_load)))
