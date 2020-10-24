@@ -234,3 +234,5 @@ We have two clear outliers in this graph. **David Robinson** and **Michael Jorda
 ![Screenshot](Part-2-Images/2004-PCA-Overall-Impact.png)
 
 
+Continue here..
+
