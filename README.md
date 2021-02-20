@@ -145,7 +145,7 @@ Theres a few ways in which eras are definded in the NBA. There's by decade, by m
 - 1999-2009 Kobe, Shaq and Duncan Era.
 - 2009-2016 Lebron James and Golden State Warriors Era. 
 
-These eras are by no means set, they are almost entriely subjective. But they do consist of whom most would consider the most dominant player(s)/team(s) of the time. 
+These eras are by no means set, they are almost entriely subjective. But they do consist of whom most would consider the most dominant player(s)/team(s) of the time. This isn't to disrepsect players like Isiah Thomas or Hakeem Olajuwon whom were exceptional players of their respective eras, however in order to clearly define eras picking the most dominant of this time period seems prudent. 
 
 ## Pre-processing: Data-cleaning
 
