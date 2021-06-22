@@ -1,3 +1,5 @@
+Going to work on 1986 Celtics first. Just wanted to get some ideas down. 
+
 # Bill Russell
 
 ### ***Resume***: 
@@ -10,10 +12,6 @@
   * *Career:* 15.1 PPG, 22.5 RPG (2nd all-time), 4.3 APG     
   * *Playoffs:* 16.2 PPG, 24.9 RPG (1st All Time), 4.7 APG   
   * *Championships:* 11 (1st All Time)
-
-
-
-### Theme is around the power that sports has on cultural issues also some stats stuff like how dominant he was as a defsensive player. 
 
 After struggling to fill the building during Russell’s astonishing run (eleven titles in thirteen years from 1957 to 1969), the Celtics were suddenly flourishing in a notoriously racist city
 
