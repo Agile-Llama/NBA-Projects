@@ -6,3 +6,5 @@ Currently I have only done significant work on *'Player Similiarity'* with inten
         - Bill Russels Celtics
         - Julius Irvings 76ers (Some focus on early super teams)
         - 1986 Celtics Dynasty
+
+Been 5 years since I looked through this. I should look into it again. Feels like basketball has changed so much in the 5 years, would be interesting to see how it looks now. 
